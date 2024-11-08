@@ -5,6 +5,7 @@ import { AnimatePresence } from 'framer-motion';
 import * as React from 'react';
 
 import Button from '@/components/buttons/Button';
+import ArrowLink from '@/components/links/ArrowLink';
 
 import { SimpleItem } from '@/app/simple-list/simple-item';
 
@@ -17,7 +18,13 @@ export default function SimpleList() {
         <div className='layout max-w-lg min-h-screen py-20'>
           <h1>Simple List</h1>
           <p className='text-neutral-500 text-sm mt-2'>
-            Animating height to auto
+            Animating height to auto.{' '}
+            <ArrowLink
+              className='text-neutral-600'
+              href='https://github.com/theodorusclarence/framer-motion-recipe/blob/main/src/app/simple-list'
+            >
+              See the files
+            </ArrowLink>
           </p>
 
           <Button

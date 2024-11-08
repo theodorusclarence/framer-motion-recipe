@@ -35,7 +35,6 @@ export const SimpleItem = React.forwardRef<HTMLDivElement, SimpleItemProps>(
           ])}
         >
           <Card
-            key={count}
             className={clsx(['flex items-center justify-between'])}
             initial={{
               opacity: 0,

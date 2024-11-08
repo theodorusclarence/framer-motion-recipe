@@ -62,7 +62,6 @@ export const GrowingItem = React.forwardRef<HTMLDivElement, GrowingItemProps>(
           ])}
         >
           <Card
-            key={count}
             // need box content
             className='flex flex-col py-0 box-content'
             initial={{

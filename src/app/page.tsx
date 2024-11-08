@@ -28,7 +28,7 @@ export default function HomePage() {
             Collection of recipes for Framer Motion
           </p>
           <p className='mt-2 text-sm text-gray-700'>
-            <ArrowLink href='https://github.com/theodorusclarence/ts-nextjs-tailwind-starter'>
+            <ArrowLink href='https://github.com/theodorusclarence/framer-motion-recipe'>
               See the repository
             </ArrowLink>
           </p>

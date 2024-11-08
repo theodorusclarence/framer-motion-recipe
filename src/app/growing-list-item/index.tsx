@@ -5,6 +5,7 @@ import { AnimatePresence } from 'framer-motion';
 import * as React from 'react';
 
 import Button from '@/components/buttons/Button';
+import ArrowLink from '@/components/links/ArrowLink';
 
 import { GrowingItem } from '@/app/growing-list-item/growing-item';
 
@@ -18,7 +19,13 @@ export default function GrowingList() {
           <h1>List with Growing Item</h1>
           <p className='text-neutral-500 text-sm mt-2'>
             If the list item might change, you must measure the height of
-            element.
+            element.{' '}
+            <ArrowLink
+              className='text-neutral-600'
+              href='https://github.com/theodorusclarence/framer-motion-recipe/blob/main/src/app/growing-list-item'
+            >
+              See the files
+            </ArrowLink>
           </p>
 
           <Button
