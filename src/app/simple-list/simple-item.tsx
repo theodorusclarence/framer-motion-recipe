@@ -5,8 +5,6 @@ import * as React from 'react';
 
 import IconButton from '@/components/buttons/IconButton';
 
-import { Card } from '@/app/components/card';
-
 type SimpleItemProps = {
   count: number;
   i: number;
@@ -34,8 +32,12 @@ export const SimpleItem = React.forwardRef<HTMLDivElement, SimpleItemProps>(
             i === countList.length - 1 && 'pb-0',
           ])}
         >
-          <Card
-            className={clsx(['flex items-center justify-between'])}
+          <motion.div
+            className={clsx([
+              'flex items-center justify-between',
+              'px-4 py-1 rounded-xl',
+              'bg-neutral-50 border border-gray-300',
+            ])}
             initial={{
               opacity: 0,
               y: -8,
@@ -75,7 +77,7 @@ export const SimpleItem = React.forwardRef<HTMLDivElement, SimpleItemProps>(
                 'hover:text-red-500 active:text-red-600 disabled:text-red-600',
               ])}
             />
-          </Card>
+          </motion.div>
         </div>
       </motion.div>
     );

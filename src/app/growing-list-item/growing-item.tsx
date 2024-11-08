@@ -6,8 +6,6 @@ import useMeasure from 'react-use-measure';
 
 import IconButton from '@/components/buttons/IconButton';
 
-import { Card } from '@/app/components/card';
-
 type GrowingItemProps = {
   count: number;
   i: number;
@@ -61,9 +59,13 @@ export const GrowingItem = React.forwardRef<HTMLDivElement, GrowingItemProps>(
             i === countList.length - 1 && 'pb-0',
           ])}
         >
-          <Card
+          <motion.div
             // need box content
-            className='flex flex-col py-0 box-content'
+            className={clsx([
+              'flex flex-col box-content',
+              'px-4 py-1 rounded-xl',
+              'bg-neutral-50 border border-gray-300',
+            ])}
             initial={{
               opacity: 0,
               height: 0,
@@ -81,7 +83,7 @@ export const GrowingItem = React.forwardRef<HTMLDivElement, GrowingItemProps>(
             }}
             transition={{ duration: 0.15, ease: 'easeOut' }}
           >
-            <div ref={innerRef} className='py-1'>
+            <div ref={innerRef}>
               <div className='flex items-center justify-between'>
                 <p className='text-neutral-950 text-sm'>List Item {count}</p>
                 <div className='flex items-center'>
@@ -150,7 +152,7 @@ export const GrowingItem = React.forwardRef<HTMLDivElement, GrowingItemProps>(
                 )}
               </AnimatePresence>
             </div>
-          </Card>
+          </motion.div>
         </motion.div>
       </motion.div>
     );
