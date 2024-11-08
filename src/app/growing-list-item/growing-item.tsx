@@ -135,12 +135,12 @@ export const GrowingItem = React.forwardRef<HTMLDivElement, GrowingItemProps>(
                       {Array.from({ length: 3 }).map((_, i) => (
                         <li key={i} className='flex items-center gap-2 '>
                           <input
-                            id={`todo-${i}`}
+                            id={`${count}-todo-${i}`}
                             type='checkbox'
                             className='rounded size-3.5'
                           />
                           <label
-                            htmlFor={`todo-${i}`}
+                            htmlFor={`${count}-todo-${i}`}
                             className='text-xs text-neutral-700'
                           >
                             Todo item {i + 1}
