@@ -43,16 +43,33 @@
     "prefix": "rcp",
     "body": [
       "import * as React from 'react';\n",
-      "import clsxm from '@/lib/clsxm';\n",
+      "import { cn } from '@/lib/utils';\n",
       "type ${1:${TM_FILENAME_BASE}}Props= {\n",
       "} & React.ComponentPropsWithoutRef<'div'>\n",
       "export default function ${1:${TM_FILENAME_BASE}}({className, ...rest}: ${1:${TM_FILENAME_BASE}}Props) {",
       "  return (",
-      "    <div className={clsxm(['', className])} {...rest}>",
+      "    <div className={cn(['', className])} {...rest}>",
       "      $0",
       "    </div>",
       "  )",
       "}"
+    ]
+  },
+
+  "React Functional Component with Props and ForwardRef": {
+    "prefix": "rcpf",
+    "body": [
+      "import * as React from 'react';\n",
+      "import { cn } from '@/lib/utils';\n",
+      "type ${1:${TM_FILENAME_BASE}}Props= {\n",
+      "} & React.ComponentPropsWithoutRef<'div'>\n",
+      "export const ${1:${TM_FILENAME_BASE}} = React.forwardRef<HTMLDivElement, ${1:${TM_FILENAME_BASE}}Props>(({className, ...rest}, ref) => {",
+      "  return (",
+      "    <div className={cn([className])} {...rest} ref={ref}>",
+      "      $0",
+      "    </div>",
+      "  )",
+      "});"
     ]
   },
   //#endregion  //*======== React ===========

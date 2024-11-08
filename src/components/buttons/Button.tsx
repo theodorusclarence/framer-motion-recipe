@@ -5,7 +5,14 @@ import { ImSpinner2 } from 'react-icons/im';
 
 import { cn } from '@/lib/utils';
 
-const ButtonVariant = ['primary', 'outline', 'ghost', 'light', 'dark'] as const;
+const ButtonVariant = [
+  'primary',
+  'outline',
+  'ghost',
+  'light',
+  'dark',
+  'new',
+] as const;
 const ButtonSize = ['sm', 'base'] as const;
 
 type ButtonProps = {
@@ -47,13 +54,13 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
         disabled={disabled}
         className={cn(
           'inline-flex items-center rounded font-medium',
-          'focus-visible:ring-primary-500 focus:outline-none focus-visible:ring',
+          'focus-visible:ring-primary-500 focus:outline-none focus-visible:ring-2',
           'shadow-sm',
           'transition-colors duration-75',
           //#region  //*=========== Size ===========
           [
             size === 'base' && ['px-3 py-1.5', 'text-sm md:text-base'],
-            size === 'sm' && ['px-2 py-1', 'text-xs md:text-sm'],
+            size === 'sm' && ['px-3 py-1.5', 'text-xs'],
           ],
           //#endregion  //*======== Size ===========
           //#region  //*=========== Variants ===========
@@ -89,6 +96,11 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
               'bg-gray-900 text-white',
               'border border-gray-600',
               'hover:bg-gray-800 active:bg-gray-700 disabled:bg-gray-700',
+            ],
+            variant === 'new' && [
+              'border border-gray-300',
+              'hover:bg-gray-100 active:bg-gray-200 disabled:bg-gray-200',
+              'font-normal rounded-lg',
             ],
           ],
           //#endregion  //*======== Variants ===========

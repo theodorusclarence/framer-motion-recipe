@@ -8,9 +8,10 @@ import { cn } from '@/lib/utils';
 const IconButtonVariant = [
   'primary',
   'outline',
-  'ghost',
   'light',
   'dark',
+  'ghost',
+  'ghost-danger',
 ] as const;
 
 type IconButtonProps = {
@@ -46,7 +47,7 @@ const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
         disabled={disabled}
         className={cn(
           'inline-flex items-center justify-center rounded font-medium',
-          'focus-visible:ring-primary-500 focus:outline-none focus-visible:ring',
+          'focus-visible:ring-primary-500 focus:outline-none focus-visible:ring-2',
           'shadow-sm',
           'transition-colors duration-75',
           'min-h-[28px] min-w-[28px] p-1 md:min-h-[34px] md:min-w-[34px] md:p-2',
@@ -66,13 +67,6 @@ const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
               isDarkBg &&
                 'hover:bg-gray-900 active:bg-gray-800 disabled:bg-gray-800',
             ],
-            variant === 'ghost' && [
-              'text-primary-500',
-              'shadow-none',
-              'hover:bg-primary-50 active:bg-primary-100 disabled:bg-primary-100',
-              isDarkBg &&
-                'hover:bg-gray-900 active:bg-gray-800 disabled:bg-gray-800',
-            ],
             variant === 'light' && [
               'bg-white text-gray-700',
               'border border-gray-300',
@@ -83,6 +77,16 @@ const IconButton = React.forwardRef<HTMLButtonElement, IconButtonProps>(
               'bg-gray-900 text-white',
               'border border-gray-600',
               'hover:bg-gray-800 active:bg-gray-700 disabled:bg-gray-700',
+            ],
+            variant === 'ghost' && [
+              'rounded-xl shadow-none',
+              'hover:bg-neutral-100 active:bg-neutral-200 disabled:bg-neutral-200',
+              'hover:text-neutral-900 active:text-neutral-950 disabled:text-neutral-950',
+            ],
+            variant === 'ghost-danger' && [
+              'rounded-xl shadow-none',
+              'hover:bg-red-50 active:bg-red-100 disabled:bg-red-100',
+              'hover:text-red-500 active:text-red-600 disabled:text-red-600',
             ],
           ],
           //#endregion  //*======== Variants ===========

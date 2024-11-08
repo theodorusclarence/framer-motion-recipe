@@ -23,7 +23,7 @@ const PrimaryLink = React.forwardRef<HTMLAnchorElement, PrimaryLinkProps>(
           'font-medium',
           //#region  //*=========== Variant ===========
           variant === 'primary' && [
-            'text-primary-500 hover:text-primary-600 active:text-primary-700',
+            'text-primary-600 hover:text-primary-700 hover:underline active:text-primary-800',
             'disabled:text-primary-200',
           ],
           variant === 'basic' && [
